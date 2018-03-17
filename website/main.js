@@ -1,6 +1,8 @@
 class Song {
-  constructor(title, mp3url) {
+  constructor(title, album, artist, mp3url) {
     this.title = title;
+    this.album = album;
+    this.artist = artist;
     this.mp3url = mp3url;
   }
 }
@@ -48,7 +50,7 @@ $(document).ready(function() {
     })
     
     backButton.click(function(e){
-        if(currentView>1)
+        if (currentView > 1)
             loadAlbums()
         else
             loadArtists()
@@ -78,7 +80,7 @@ $(document).ready(function() {
         $("#lyricsdiv").css("display","none")
     })
     $("#lyricsbutton").click(function(e){
-        var win = window.open("https://breast-fed-steriliz.000webhostapp.com/lyricsGetter.php?data=" + fixStringForURL(selectedSong.attr("artist")) + "\\" + fixStringForURL(selectedSong.attr("album")) + "\\" + fixStringForURL(selectedSong.attr("title")), '_blank');
+        var win = window.open("https://breast-fed-steriliz.000webhostapp.com/lyricsGetter.php?data=" + fixStringForURL(selectedSong.artist) + "\\" + fixStringForURL(selectedSong.album) + "\\" + fixStringForURL(selectedSong.title), '_blank');
         win.focus();
         /*const axURL = "getreq.php?url=http://lc.pe.hu/lyricsGetter.php?data=" + fixStringForURL(selectedSong.attr("artist"))+"\\"+fixStringForURL(selectedSong.attr("album"))+"\\"+fixStringForURL(selectedSong.attr("title"))
         $.ajax({
@@ -95,16 +97,16 @@ $(document).ready(function() {
         
     })
     $("#addnextbutton").click(function(e){
-        playlist.splice(playingIndex+1, 0, new Song(selectedSong.attr("title"), selectedSong.attr("mp3url")))
+        playlist.splice(playingIndex+1, 0, new Song(selectedSong.title, selectedSong.album, selectedSong.artist, selectedSong.mp3url))
         $("#rightclickdiv").css("display","none")
     })
     $("#addtoqueuebutton").click(function(e){
-        playlist.splice(queuePos, 0, new Song(selectedSong.attr("title"), selectedSong.attr("mp3url")))
+        playlist.splice(queuePos, 0, new Song(selectedSong.title, selectedSong.album, selectedSong.artist, selectedSong.mp3url))
         queuePos++
         $("#rightclickdiv").css("display","none")
     })
     $("#downloadbutton").click(function(e){
-        window.open(selectedSong.attr("mp3url"))
+        window.open(selectedSong.mp3url)
         $("#rightclickdiv").css("display","none")
     })
     $("#getlinkbutton").click(function(e){
@@ -130,24 +132,28 @@ function pause()
 
 function playNext()
 {
-    if(audio && playlist[playingIndex+1])
+    if(audio && playlist[playingIndex + 1])
     {
         playingIndex++
         if(queuePos == playingIndex)
             queuePos++
-        audio.src=playlist[playingIndex].mp3url
+        
+        audio.src = playlist[playingIndex].mp3url
         curSongDisplay.html(playlist[playingIndex].title)
         audio.play()
+        loadLyrics(playlist[playingIndex])
     }
 }
 function playPrev()
 {
-    if(audio && playlist[playingIndex-1])
+    if(audio && playlist[playingIndex - 1])
     {
         playingIndex--
-        audio.src=playlist[playingIndex].mp3url
+        
+        audio.src = playlist[playingIndex].mp3url
         curSongDisplay.html(playlist[playingIndex].title)
         audio.play()
+        loadLyrics(playlist[playingIndex])
     }
 }
 
@@ -244,7 +250,7 @@ function loadSongs()
             $(".box").mousedown(function(event) {
                 switch (event.which) {
                     case 3:
-                        selectedSong=$(this)
+                        selectedSong = new Song($(this).attr("title"), $(this).attr("album"), $(this).attr("artist"), $(this).attr("mp3url"))
                         $("#rightclickdiv").css("display","block")
                         break
                 }
@@ -262,15 +268,15 @@ function loadSongs()
                 
                 var locatedCorrectly = false
                 var currentElement = $(".box").first()
-                while(currentElement.length>0)
+                while (currentElement.length > 0)
                 {
-                    const isong = new Song(currentElement.attr("title"), currentElement.attr("mp3url"))
+                    const isong = new Song(currentElement.attr("title"), currentElement.attr("album"), currentElement.attr("artist"), currentElement.attr("mp3url"))
                     playlist.push(isong)
                     //playlist.push(currentElement.attr("mp3url"))
                     currentElement = currentElement.next()
                 }
                 
-                loadLyrics($(this))
+                loadLyrics(new Song($(this).attr("title"), $(this).attr("album"), $(this).attr("artist"), $(this).attr("mp3url")))
                 
                 audio.src = playlist[playingIndex].mp3url
                 curSongDisplay.html(playlist[playingIndex].title)
@@ -282,11 +288,9 @@ function loadSongs()
     })
 }
 
-function loadLyrics(element)
+function loadLyrics(song)
 {
-    //const axURL = "getreq.php?url=https://breast-fed-steriliz.000webhostapp.com/lyricsGetter.php?data=calle13\\calle13\\suave"
-    const axURL = `getreq.php?url=https://breast-fed-steriliz.000webhostapp.com/lyricsGetter.php?data=${fixStringForURL(element.attr("artist"))}\\${fixStringForURL(element.attr("album"))}\\${fixStringForURL(element.attr("title"))}`
-    //"getreq.php?url=https://breast-fed-steriliz.000webhostapp.com/lyricsGetter.php?data=" + fixStringForURL(song.attr("artist")) + "\\" + fixStringForURL(song.attr("album")) + "\\" + fixStringForURL(song.attr("title"))
+    const axURL = `getreq.php?url=https://breast-fed-steriliz.000webhostapp.com/lyricsGetter.php?data=${fixStringForURL(song.artist)}\\${fixStringForURL(song.album)}\\${fixStringForURL(song.title)}`
         $.ajax({
         type: 'GET',
         url: axURL,
