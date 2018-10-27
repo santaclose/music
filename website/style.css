@@ -4,51 +4,68 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.container {
+    width: 50%;
+    float: left;
 }
 
 .wrapper{
-    float: left; 
+    float: right; 
     text-align: center;
-    margin: 80px 2vw 80px 5vw;
-    padding: 0px 2vw 0px 2vw;
-    width: 50vw;
+    margin: 80px 16px 80px 0px;
+    padding: 16px;
+    width: 400px;
+    background-color: lightgray;
+    border-radius: 7px
 }
 
 #lyricswrapper{
-    float: right;
-    margin: 80px 5vw 80px 2vw;
-
-    
-    padding: 0px 2vw;
-    width: 25vw;
+    text-align: left;
+    float: left;
+    margin: 80px 0px 80px 16px;
+    font-size: 11px;
+    padding: 16px;
+    background-color: lightgray;
+    border-radius: 7px;
+    width: 400px;
+    line-height: 18px;
 }
 
 
 .box{
-    #background-color: white;
+    font-size: 14px;
     color: black;
     cursor: pointer;
-    padding: 10px 4%;
-    margin: 0px;
+    padding: 6px 4%;
+    background-color: #ddd;
+    margin: 5px 0px;
     text-align: left;
     width: 92%;
+    border-radius: 5px;
 }
 .box:hover{
     background-color: #777;
 }
 
 .albumBox{
-    #background-color: white;
     color: black;
-    border: 1px solid #eee;
     cursor: pointer;
-    margin: auto .75vw .75vw .75vw;
+    margin: 5px;
     display: inline-block;
+    background-color: #ddd;
+    border-radius: 5px;
     width: 150px;
     vertical-align: top;
 }
 .albumBox:hover{
     background-color: #777;
+}
+
+p {
+    
 }
 
 .albumBoxText{
@@ -74,11 +91,12 @@ body {
 }
 
 #upBar{
-    background-color: #333;
+    background-color: #777;
     top: 0px;
     position: fixed;
     width: 100%;
     height: 55px;
+    text-align: left;
 }
 #backButton{
     visibility: hidden;
@@ -120,7 +138,7 @@ body {
 }
 #controlBar{
     text-align: center;
-    background-color: #333;
+    background-color: #777;
     bottom: 0px;
     position: fixed;
     width: 100%;
@@ -142,18 +160,19 @@ body {
 }
 
 #rightclickdiv {
-    border: 1px solid black;
+    border: 2px solid lightgray;
     margin-left: 38vw;
     padding: 20px;
     position: fixed;
-    background-color: #fafafa;
+    background-color: #ddd;
     margin-top: 25vh;
-    #height: 155px;
-    width: 15%;
+    width: 200px;
+    text-align: left;
+    border-radius: 7px;
 }
 #closerightclickdiv {
     cursor: pointer;
-    width: 20px;
+    width: 14px;
     float:right
 }
 #closelyricsdiv {
@@ -168,8 +187,10 @@ ul {
 li {
     cursor: pointer;
     width: 80%;
-    padding: 10px 10px;
+    padding: 8px;
+    margin: 6px 0px;
     list-style-type: none;
+    border-radius: 5px;
     -webkit-transition: background-color .4s;
     transition: background-color .4s;
 }

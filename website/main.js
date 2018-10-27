@@ -290,7 +290,7 @@ function loadSongs()
 
 function loadLyrics(song)
 {
-    const axURL = `getreq.php?url=https://breast-fed-steriliz.000webhostapp.com/lyricsGetter.php?data=${fixStringForURL(song.artist)}\\${fixStringForURL(song.album)}\\${fixStringForURL(song.title)}`
+    const axURL = `lyricsGetter.php?data=${fixStringForURL(song.artist)}\\${fixStringForURL(song.album)}\\${fixStringForURL(song.title)}`
         $.ajax({
         type: 'GET',
         url: axURL,
@@ -321,13 +321,10 @@ function loadDarkStyle(){
     //wrapper.css("border-left", "1px solid #444")
     //wrapper.css("border-right", "1px solid #444")
     $("body").css("background-color", "black")
-    $("#upBar").css("border-bottom", "1px solid #444")
-    $("#controlBar").css("border-top", "1px solid #444")
 }
 function loadLightStyle(){
     $(".box").css("color", "black")
     $(".albumBox").css("color", "black")
-    $(".albumBox").css("border", "1px solid #eee")
     //wrapper.css("border-left", "1px solid #eee")
     //wrapper.css("border-right", "1px solid #eee")
     $("body").css("background-color", "white")

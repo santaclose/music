@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="en"><head>
+        <link rel="icon" type="image/png" href="img/icon.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <title>music</title>
+    </head>
+
+    <body style="margin: 0px;">
+        
+        <div id="rightclickdiv" style="display: none;">
+            <i id="closerightclickdiv" class="fas fa-times"></i>
+            <ul>
+                <li id="addnextbutton">Add next</li>
+                <li id="addtoqueuebutton">Add to queue</li>
+                <!--<li id="lyricsbutton">Lyrics</li>-->
+                <!--<li id="getlinkbutton">Get Link</li>-->
+                <li id="downloadbutton">Download</li>
+            </ul>
+        </div><!--
+        <div id="lyricsdiv" style="display: none">
+            <img id="closelyricsdiv" src="https://image.flaticon.com/icons/svg/61/61155.svg">
+            <pre id="lyricstext"></pre>
+        </div>-->
+
+        <div class="container">
+            <div class="wrapper"><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/AC_DC/albums.dat"><p class="boxTextLeft">AC/DC</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Amy_Winehouse/albums.dat"><p class="boxTextLeft">Amy Winehouse</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Avril_Lavigne/albums.dat"><p class="boxTextLeft">Avril Lavigne</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Billy_Idol/albums.dat"><p class="boxTextLeft">Billy Idol</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Blink182/albums.dat"><p class="boxTextLeft">Blink-182</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Bob_Marley/albums.dat"><p class="boxTextLeft">Bob Marley</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Calle_13/albums.dat"><p class="boxTextLeft">Calle 13</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Chumbawamba/albums.dat"><p class="boxTextLeft">Chumbawamba</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Dream_Theater/albums.dat"><p class="boxTextLeft">Dream Theater</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Evelyn_Champagne_King/albums.dat"><p class="boxTextLeft">Evelyn "Champagne" King</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Flo_Rida/albums.dat"><p class="boxTextLeft">Flo Rida</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Foo_Fighters/albums.dat"><p class="boxTextLeft">Foo Fighters</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Frank_Sinatra/albums.dat"><p class="boxTextLeft">Frank Sinatra</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Chopin/albums.dat"><p class="boxTextLeft">Frédéric Chopin</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Goldfinger/albums.dat"><p class="boxTextLeft">Goldfinger</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Grand_Funk_Railroad/albums.dat"><p class="boxTextLeft">Grand Funk Railroad</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Green_Day/albums.dat"><p class="boxTextLeft">Green Day</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Guns_N_Roses/albums.dat"><p class="boxTextLeft">Guns N' Roses</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Janis_Joplin/albums.dat"><p class="boxTextLeft">Janis Joplin</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Judas_Priest/albums.dat"><p class="boxTextLeft">Judas Priest</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Knife_Party/albums.dat"><p class="boxTextLeft">Knife Party</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Lamb_of_God/albums.dat"><p class="boxTextLeft">Lamb of God</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/La_Vida_Boheme/albums.dat"><p class="boxTextLeft">La Vida Bohème</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Led_Zeppelin/albums.dat"><p class="boxTextLeft">Led Zeppelin</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Limp_Bizkit/albums.dat"><p class="boxTextLeft">Limp Bizkit</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Lorde/albums.dat"><p class="boxTextLeft">Lorde</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Beethoven/albums.dat"><p class="boxTextLeft">Ludwig van Beethoven</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Lynyrd_Skynyrd/albums.dat"><p class="boxTextLeft">Lynyrd Skynyrd</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Marilyn_Manson/albums.dat"><p class="boxTextLeft">Marilyn Manson</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Meat_Loaf/albums.dat"><p class="boxTextLeft">Meat Loaf</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Michael_Jackson/albums.dat"><p class="boxTextLeft">Michael Jackson</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Molotov/albums.dat"><p class="boxTextLeft">Molotov</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Muse/albums.dat"><p class="boxTextLeft">Muse</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/My_Chemical_Romance/albums.dat"><p class="boxTextLeft">My Chemical Romance</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Pink_Floyd/albums.dat"><p class="boxTextLeft">Pink Floyd</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Pyotr_Tchaikovsky/albums.dat"><p class="boxTextLeft">Pyotr Tchaikovsky</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Queen/albums.dat"><p class="boxTextLeft">Queen</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Radiohead/albums.dat"><p class="boxTextLeft">Radiohead</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Rammstein/albums.dat"><p class="boxTextLeft">Rammstein</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Residente/albums.dat"><p class="boxTextLeft">Residente</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Skrillex/albums.dat"><p class="boxTextLeft">Skrillex</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/System_of_a_Down/albums.dat"><p class="boxTextLeft">System of a Down</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/The_Killers/albums.dat"><p class="boxTextLeft">The Killers</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/The_Offspring/albums.dat"><p class="boxTextLeft">The Offspring</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/The_Rolling_Stones/albums.dat"><p class="boxTextLeft">The Rolling Stones</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Toto/albums.dat"><p class="boxTextLeft">Toto</p></div><div class="box" albumsurl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Van_Halen/albums.dat"><p class="boxTextLeft">Van Halen</p></div>
+            <div class="albumBox" songlisturl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Chumbawamba/Pictures_of_Starving_Children_Sell_Records_Starvation_Charity_and_Rock__Roll__Lies__Traditions.dat"><img style="width: 100%;" src="https://upload.wikimedia.org/wikipedia/en/0/0c/Chumbastarving.jpg"><div class="albumBoxText">Pictures of Starving Children Sell Records: Starvation, Charity and Rock &amp; Roll - Lies &amp; Traditions</div></div>
+                <div class="albumBox" songlisturl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Chumbawamba/Never_Mind_The_Ballots.dat"><img style="width: 100%;" src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chumbaballots.jpg"><div class="albumBoxText">Never Mind The Ballots</div></div>
+                <div class="albumBox" songlisturl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Chumbawamba/Never_Mind_The_Ballots.dat"><img style="width: 100%;" src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chumbaballots.jpg"><div class="albumBoxText">Never Mind The Ballots</div></div>
+                <div class="albumBox" songlisturl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Chumbawamba/Never_Mind_The_Ballots.dat"><img style="width: 100%;" src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chumbaballots.jpg"><div class="albumBoxText">Never Mind The Ballots</div></div>
+                <div class="albumBox" songlisturl="https://raw.githubusercontent.com/shiabehugo/48otw/master/Chumbawamba/Never_Mind_The_Ballots.dat"><img style="width: 100%;" src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chumbaballots.jpg"><div class="albumBoxText">Never Mind The Ballots</div></div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="lyricswrapper">OK, this one's called &quot;Whitewash&quot;<br>
+When was the very first time you saw Chumbawamba?<br>
+In my dreams!<br>
+Ha!<br>
+Working in a forge, black lungs, burnt skin<br>
+Callouses, arched back, hammering, hammering<br>
+Stalin watching over us pigeon shit head<br>
+We'd spit on the floor at this red bastard god<br>
+That's how grateful we are<br>
+[Repeat]<br>
+Bronze statue, pink marble, built to last<br>
+We brought him to his knees in a single night<br>
+And the boots that remained I attacked, I attacked<br>
+Hammering, hammering, the past is past<br>
+That's how grateful we are<br>
+[Repeat]<br>
+Scrub away, scrub away<br>
+And the noise rang out, metal on metal<br>
+Pigeons flit, dust settled<br>
+Out from the shadows we took to the streets<br>
+David chopping at the giant's feet<br>
+That's how grateful we are<br>
+[Repeat]<br>
+OK, we're gonna take it right, right, right, right down, way down<br>
+What we need is a break from the old routine<br>
+[Repeat]<br>
+Can I kick it? Yes you can!<br>
+[Repeat]<br>
+There ain't no justice, just us<br>
+[Repeat]<br>
+OK, we've been doing this one quite a few nights running, but I'd like to take that one. Is that a yes? Which one, then?<br>
+Goodbye girl, goodbye girl...<br>
+Martin McLaren, Archer, Anais Nin...<br>
+Well, basically, Chumbawamba are the sort of metals of the pop world<br>
+The old groups, they're not concerned with what there is to be learned<br>
+They sell 501s and they think it's funny, turning rebellion into money<br>
+Can I kick it?<br>
+This songs become a bit irrelevant now, innit, we may as well just go off now. Couple of yous could just get up and we'll just fuck off. I'm into that man, you know, 'cause I've got a hot chocolate waiting for me back there. There's, uh, quite a bit of anti-Criminal Justice Bill sentiment down in front here. Excellent!<br>
+What we need is a break from the old routine<br>
+[Repeat]<br>
+You still want to come? Too late, too late<br>
+We're cut and we're fallen like harvested wheat<br>
+But we lived on our feet, at least, at last<br>
+And we will live on our feet, at least, at last<br>
+That's how grateful we are<br>
+[Repeat]<br>
+You still want to come? Too late, too late<br>
+We're cut and we're fallen like harvested wheat<br>
+But we lived on our feet, at least, at last<br>
+We will live on our feet, at least, at last<br>
+That's how grateful we are<br>
+That's how grateful<br>
+Ta</div>
+        </div>
+
+
+        <div id="upBar">
+            <div id="curSongDisplay">Meinhof</div>
+            <div id="backButton" style="opacity: 0; visibility: hidden;">b</div>
+            <div id="styleButton">S</div>
+        </div>
+
+
+        <div id="controlBar">
+            <div style="width: 150px; height: 100%; display: inline-block">
+                <div class="controlBarButton" style="visibility: visible; opacity: 1;">B</div>
+                <div class="controlBarButton" style="visibility: visible; opacity: 1;">P</div>
+                <div class="controlBarButton" style="visibility: visible; opacity: 1;">N</div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="js.cookie.js"></script>
+
+    
+    
+</body></html>
