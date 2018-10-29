@@ -123,7 +123,7 @@ function GoogleSearchForLyrics($artist, $song, $lyricsWebsite){
     //echo "azlyrics link: " . $googleSearchHTML;
     return $googleSearchHTML;
 }
-
+/*
 function AddLineBreaks($text){
     
     $result = "";
@@ -136,7 +136,7 @@ function AddLineBreaks($text){
             $result .= "<br>";
     }
     return $result;
-}
+}*/
 
 $song = $_GET['data'];//   Artist\Album\Song
 $curbspos = 0;
@@ -149,7 +149,7 @@ $song = substr($song, $curbspos+1, strlen($song)-$curbspos);
 
 $azurl = GoogleSearchForLyrics($artist, $song, "https://www.azlyrics.com");
 header('Content-Type: text/plain');
-echo AddLineBreaks(ExecuteAZLyrics($azurl));
+echo ExecuteAZLyrics($azurl);
 //echo $azurl;
 
 //$path = $artist . "/" . $album;

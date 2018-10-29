@@ -295,7 +295,15 @@ function loadLyrics(song)
         type: 'GET',
         url: axURL,
         success: function(data){
-                $("#lyricswrapper").html(`<plaintext>${data}`)
+
+                var wrapperContent = ""
+                for (var i = 0; i < data.length; i++)
+                {
+                    wrapperContent += data.charAt(i);
+                    if (data.charAt(i) === '\n')
+                        wrapperContent += "<br>"
+                }
+                $("#lyricswrapper").html(wrapperContent)
             }
         })
 }
