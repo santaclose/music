@@ -1,210 +1,238 @@
-@font-face {
-    font-family: 'musicFont'; /*a name to be used later*/
-    src: url('music.ttf'); /*URL to font*/
+@font-face 
+{
+	font-family: 'musicFont'; /*a name to be used later*/
+	src: url('music.ttf'); /*URL to font*/
 }
-body {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-.container {
-    width: 50%;
-    float: left;
+body 
+{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }
 
-.wrapper{
-    float: right; 
-    text-align: center;
-    margin: 80px 16px 80px 0px;
-    padding: 16px;
-    width: 400px;
-    background-color: lightgray;
-    border-radius: 7px
+.container 
+{
+	width: 50%;
+	float: left;
 }
 
-#lyricswrapper{
-    text-align: left;
-    float: left;
-    margin: 80px 0px 80px 16px;
-    font-size: 11px;
-    padding: 16px;
-    background-color: lightgray;
-    border-radius: 7px;
-    width: 400px;
-    line-height: 18px;
+.wrapper
+{
+	float: right; 
+	text-align: center;
+	margin: 80px 16px 80px 0px;
+	padding: 16px;
+	width: 300px;
+	background-color: lightgray;
+	border-radius: 7px
+}
+
+#lyricswrapper
+{
+	text-align: left;
+	float: left;
+	margin: 80px 0px 80px 16px;
+	font-size: 9px;
+	padding: 16px;
+	background-color: lightgray;
+	border-radius: 7px;
+	width: 300px;
+	line-height: 18px;
 }
 
 
-.box{
-    font-size: 14px;
-    color: black;
-    cursor: pointer;
-    padding: 6px 4%;
-    background-color: #ddd;
-    margin: 5px 0px;
-    text-align: left;
-    width: 92%;
-    border-radius: 5px;
+.box
+{
+	font-size: 9px;
+	color: black;
+	cursor: pointer;
+	padding: 6px 4%;
+	background-color: #ddd;
+	margin: 5px 0px;
+	text-align: left;
+	width: 92%;
+	border-radius: 5px;
 }
-.box:hover{
-    background-color: #777;
-}
-
-.albumBox{
-    color: black;
-    cursor: pointer;
-    margin: 5px;
-    display: inline-block;
-    background-color: #ddd;
-    border-radius: 5px;
-    width: 150px;
-    vertical-align: top;
-}
-.albumBox:hover{
-    background-color: #777;
+.box:hover
+{
+	background-color: #777;
 }
 
-p {
-    
+.albumBox
+{
+	color: black;
+	cursor: pointer;
+	margin: 5px;
+	display: inline-block;
+	background-color: #ddd;
+	border-radius: 5px;
+	width: 90px;
+	vertical-align: top;
+}
+.albumBox:hover
+{
+	background-color: #777;
 }
 
-.albumBoxText{
-    padding: 5%;
-    display: block;
-    position: relative;
-    text-align: center;
-    font-size: 12px;
-    text-align: center;
+p 
+{
+	
 }
 
-.boxTextLeft{
-    padding-left: 30px;
-    display: inline-block;
-    padding: 0px;
-    margin: 0px;
-}
-.boxTextRight{
-    margin-left: 20px;
-    display: inline-block;
-    padding: 0px;
-    margin: 0px;
+.albumBoxText
+{
+	padding: 5%;
+	display: block;
+	position: relative;
+	text-align: center;
+	font-size: 9px;
+	text-align: center;
 }
 
-#upBar{
-    background-color: #777;
-    top: 0px;
-    position: fixed;
-    width: 100%;
-    height: 55px;
-    text-align: left;
+.boxTextLeft
+{
+	padding-left: 30px;
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
 }
-#backButton{
-    visibility: hidden;
-    cursor: pointer;
-    font-family: 'musicFont';
-    margin: 0px 0px 0px 15vw;
-    display: inline-block;
-    color: white;
-    font-size: 38px;
-    -webkit-transition: color .2s;
-    transition: color .2s;
-}
-#backButton:hover{
-    color: #444;
-}
-#curSongDisplay{
-    pointer-events: none;
-    color: white;
-    position: fixed;
-    display: inline-block;
-    margin-top: 17px;
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-}
-#styleButton{
-    visibility: visible;
-    cursor: pointer;
-    font-family: 'musicFont';
-    margin: 0px 15vw 0px 0px;
-    float: right;
-    color: white;
-    font-size: 38px;
-    -webkit-transition: color .2s;
-    transition: color .2s;
-}
-#styleButton:hover{
-    color: #444;
-}
-#controlBar{
-    text-align: center;
-    background-color: #777;
-    bottom: 0px;
-    position: fixed;
-    width: 100%;
-    height: 55px;
-}
-.controlBarButton{
-    visibility: hidden;
-    cursor: pointer;
-    font-family: 'musicFont';
-    margin: 0px 10px;
-    display: inline-block;
-    color: white;
-    font-size: 38px;
-    -webkit-transition: color .2s;
-    transition: color .2s;
-}
-.controlBarButton:hover{
-    color: #444;
+.boxTextRight
+{
+	margin-left: 20px;
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
 }
 
-#rightclickdiv {
-    border: 2px solid lightgray;
-    margin-left: 38vw;
-    padding: 20px;
-    position: fixed;
-    background-color: #ddd;
-    margin-top: 25vh;
-    width: 200px;
-    text-align: left;
-    border-radius: 7px;
+#topBar
+{
+	background-color: #777;
+	top: 0px;
+	position: fixed;
+	width: 100%;
+	height: 35px;
+	text-align: left;
 }
-#closerightclickdiv {
-    cursor: pointer;
-    width: 14px;
-    float:right
+#backButton
+{
+	cursor: pointer;
+	font-family: 'musicFont';
+	margin: 0px 0px 0px 15vw;
+	display: inline-block;
+	color: white;
+	font-size: 25px;
+	-webkit-transition: color .2s;
+	transition: color .2s;
 }
-#closelyricsdiv {
-    cursor: pointer;
-    width: 20px;
-    float:right
+#backButton:hover
+{
+	color: #444;
 }
-ul {
-    margin: 0px;
-    padding: 0px;
+#curSongDisplay
+{
+	pointer-events: none;
+	color: white;
+	position: fixed;
+	display: inline-block;
+	margin-top: 12px;
+	font-size: 13px;
+	text-align: center;
+	width: 100%;
 }
-li {
-    cursor: pointer;
-    width: 80%;
-    padding: 8px;
-    margin: 6px 0px;
-    list-style-type: none;
-    border-radius: 5px;
-    -webkit-transition: background-color .4s;
-    transition: background-color .4s;
+#styleButton
+{
+	visibility: visible;
+	cursor: pointer;
+	font-family: 'musicFont';
+	margin: 0px 15vw 0px 0px;
+	float: right;
+	color: white;
+	font-size: 25px;
+	-webkit-transition: color .2s;
+	transition: color .2s;
 }
-li:hover{
-    background-color: #aaa;
+#styleButton:hover
+{
+	color: #444;
+}
+#controlBar
+{
+	text-align: center;
+	background-color: #777;
+	bottom: 0px;
+	position: fixed;
+	width: 100%;
+	height: 35px;
+}
+.controlBarButton
+{
+	visibility: hidden;
+	cursor: pointer;
+	font-family: 'musicFont';
+	margin: 0px 10px;
+	display: inline-block;
+	color: white;
+	font-size: 25px;
+	-webkit-transition: color .2s;
+	transition: color .2s;
+}
+.controlBarButton:hover
+{
+	color: #444;
 }
 
-#lyricsdiv{
-    border: 1px solid black;
-    align-content: center;
-    margin-left: 23vw;
-    padding: 20px;
-    position: fixed;
-    background-color: #fafafa;
-    margin-top: 10vh;
-    width: 50%;
+#rightclickdiv 
+{
+	border: 2px solid lightgray;
+	margin-left: 38vw;
+	padding: 20px;
+	position: fixed;
+	background-color: #ddd;
+	margin-top: 25vh;
+	width: 200px;
+	text-align: left;
+	border-radius: 7px;
+}
+#closerightclickdiv 
+{
+	cursor: pointer;
+	width: 14px;
+	float:right
+}
+#closelyricsdiv 
+{
+	cursor: pointer;
+	width: 20px;
+	float:right
+}
+ul 
+{
+	margin: 0px;
+	padding: 0px;
+}
+li 
+{
+	cursor: pointer;
+	width: 80%;
+	padding: 8px;
+	margin: 6px 0px;
+	list-style-type: none;
+	border-radius: 5px;
+	-webkit-transition: background-color .4s;
+	transition: background-color .4s;
+}
+li:hover
+{
+	background-color: #aaa;
+}
+
+#lyricsdiv
+{
+	border: 1px solid black;
+	align-content: center;
+	margin-left: 23vw;
+	padding: 20px;
+	position: fixed;
+	background-color: #fafafa;
+	margin-top: 10vh;
+	width: 50%;
 }
