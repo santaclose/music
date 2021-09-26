@@ -11,19 +11,17 @@ body
 
 .container 
 {
-	width: 50%;
-	float: left;
+	width: 100%;
 }
 
 .wrapper
 {
-	float: right; 
-	text-align: center;
-	margin: 80px 16px 80px 0px;
-	padding: 16px;
-	width: 300px;
-	background-color: lightgray;
-	border-radius: 7px
+    text-align: center;
+    margin: 80px 50px 80px 50px;
+    padding: 16px;
+    background-color: #f1f3f4;
+    border-radius: 7px;
+	border: 1px solid #ddd;
 }
 
 #lyricswrapper
@@ -42,11 +40,11 @@ body
 
 .box
 {
-	font-size: 9px;
+	font-size: 11px;
 	color: black;
 	cursor: pointer;
 	padding: 6px 4%;
-	background-color: #ddd;
+	background-color: #0000;
 	margin: 5px 0px;
 	text-align: left;
 	width: 92%;
@@ -54,7 +52,7 @@ body
 }
 .box:hover
 {
-	background-color: #777;
+	background-color: #eee;
 }
 
 .albumBox
@@ -63,14 +61,14 @@ body
 	cursor: pointer;
 	margin: 5px;
 	display: inline-block;
-	background-color: #ddd;
+	background-color: #0000;
 	border-radius: 5px;
 	width: 90px;
 	vertical-align: top;
 }
 .albumBox:hover
 {
-	background-color: #777;
+	background-color: #eee;
 }
 
 p 
@@ -84,7 +82,7 @@ p
 	display: block;
 	position: relative;
 	text-align: center;
-	font-size: 9px;
+	font-size: 11px;
 	text-align: center;
 }
 
@@ -105,20 +103,23 @@ p
 
 #topBar
 {
-	background-color: #777;
+	user-select: none;
+	background-color: #f1f3f4;
 	top: 0px;
 	position: fixed;
 	width: 100%;
-	height: 35px;
+	height: 54px;
 	text-align: left;
+	border-bottom: 1px solid #ddd;
 }
 #backButton
 {
 	cursor: pointer;
+	width: 20vw;
+	text-align: center;
 	font-family: 'musicFont';
-	margin: 0px 0px 0px 15vw;
+	margin: 9px 0px;
 	display: inline-block;
-	color: white;
 	font-size: 25px;
 	-webkit-transition: color .2s;
 	transition: color .2s;
@@ -129,23 +130,20 @@ p
 }
 #curSongDisplay
 {
-	pointer-events: none;
-	color: white;
 	position: fixed;
-	display: inline-block;
-	margin-top: 12px;
-	font-size: 13px;
+	margin-top: 18px;
+	font-size: 16px;
 	text-align: center;
-	width: 100%;
+	display: inline-block;
+	width: 60vw;
 }
 #styleButton
 {
 	visibility: visible;
 	cursor: pointer;
 	font-family: 'musicFont';
-	margin: 0px 15vw 0px 0px;
+	margin: 9px 15vw 0px 0px;
 	float: right;
-	color: white;
 	font-size: 25px;
 	-webkit-transition: color .2s;
 	transition: color .2s;
@@ -156,28 +154,42 @@ p
 }
 #controlBar
 {
+	user-select: none;
 	text-align: center;
-	background-color: #777;
+	background: #f1f3f4;
 	bottom: 0px;
 	position: fixed;
 	width: 100%;
-	height: 35px;
+	height: 54px;
+	border-top: 1px solid #ddd;
 }
+audio
+{
+	background: #f1f3f4;
+    width: 50vw;
+    min-width: 300px;
+}
+
 .controlBarButton
 {
-	visibility: hidden;
+	margin:  9px;
 	cursor: pointer;
 	font-family: 'musicFont';
-	margin: 0px 10px;
 	display: inline-block;
-	color: white;
-	font-size: 25px;
-	-webkit-transition: color .2s;
-	transition: color .2s;
+	font-size: 1.5em;
 }
 .controlBarButton:hover
 {
 	color: #444;
+}
+
+.controlBarPrevButton
+{
+	float:  left;
+}
+.controlBarNextButton
+{
+	float:  right;
 }
 
 #rightclickdiv 

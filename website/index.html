@@ -7,7 +7,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 		<meta charset="utf-8">
-		<title>WAAW</title>
+		<title>wmp</title>
 	</head>
 
 	<body style="margin: 0px">
@@ -31,24 +31,27 @@
 			<div class="wrapper" id="songWrapper" style="display: none">
 			</div>
 		</div>
-		<div class="container">
-			<div id="lyricswrapper">
-			</div>
-		</div>
+		<!-- <div class="container"> -->
+			<!-- <div id="lyricswrapper"> -->
+			<!-- </div> -->
+		<!-- </div> -->
 
 
 		<div id="topBar">
-			<div id="curSongDisplay"></div>
 			<div id="backButton">b</div>
-			<div id="styleButton">S</div>
+			<div id="curSongDisplay"></div>
+			<!-- <div id="styleButton">S</div> -->
 		</div>
 
 
 		<div id="controlBar">
-			<div style="width: 150px; height: 100%; display: inline-block">
-				<div class="controlBarButton">B</div>
-				<div class="controlBarButton">p</div>
-				<div class="controlBarButton">N</div>
+			<div style="display: inline-block">
+				<div class="controlBarButton controlBarPrevButton">B</div>
+				<audio id="audioElement"
+					src="https://www.w3schools.com/html/horse.mp3"
+					controls>
+				</audio>
+				<div class="controlBarButton controlBarNextButton">N</div>
 			</div>
 		</div>
 

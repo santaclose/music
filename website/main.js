@@ -7,6 +7,8 @@ class Song {
   }
 }
 
+var STATIC_HOST_URL = "localhost:666"
+
 //var wrapper
 var artistWrapper
 var albumWrapper
@@ -14,7 +16,7 @@ var songWrapper
 
 var backButton
 
-var pauseButton
+// var pauseButton
 var prevButton
 var nextButton
 
@@ -42,15 +44,15 @@ $(document).ready(function() {
 	curSongDisplay = $("#curSongDisplay")
 	
 	prevButton = $(".controlBarButton").first()
-	pauseButton = prevButton.next()
-	nextButton = pauseButton.next()
+	// pauseButton = prevButton.next()
+	nextButton = prevButton.next().next()
 	
 	prevButton.click(function(e){
 		playPrev()
 	})
-	pauseButton.click(function(e){
-		pause()
-	})
+	// pauseButton.click(function(e){
+		// pause()
+	// })
 	nextButton.click(function(e){
 		playNext()
 	})
@@ -129,12 +131,12 @@ function pause()
 	if(audio.paused)
 	{
 		audio.play()
-		pauseButton.empty().append("P")
+		// pauseButton.empty().append("P")
 	}
 	else
 	{
 		audio.pause()
-		pauseButton.empty().append("p")
+		// pauseButton.empty().append("p")
 	}
 }
 
@@ -167,7 +169,8 @@ function playPrev()
 
 function initializeAudio()
 {
-	audio = new Audio()
+	// audio = new Audio()
+	audio = $("#audioElement").get(0)
 
 	audio.addEventListener("ended", function(){
 		playNext()
@@ -186,7 +189,7 @@ function loadArtists()
 	//wrapper.empty()
 	$.ajax({
 		type: 'GET',
-		url: 'getreq.php?url=https://raw.githubusercontent.com/shiabehugo/48otw/master/artists.dat',
+		url: 'https://raw.githubusercontent.com/shiabehugo/48otw/master/data/artists.dat',
 		success: function(data){
 			var split = data.split('\n')
 			for(i=0;i<split.length;i++)
@@ -218,7 +221,7 @@ function loadAlbums()
 	//backButton.css("visibility", "visible").animate({opacity: '1'}, 400)
 	albumWrapper.empty()
 	//wrapper.empty()
-	const ajaxURL = 'getreq.php?url='+albumsURL
+	const ajaxURL = albumsURL
 
 	$.ajax({
 		type: 'GET',
@@ -254,7 +257,7 @@ function loadSongs()
 	//backButton.css("visibility", "visible").animate({opacity: '1'}, 400)
 	songWrapper.empty()
 	//wrapper.empty()
-	const ajaxURL = 'getreq.php?url='+songsURL
+	const ajaxURL = songsURL
 
 	$.ajax({
 		type: 'GET',
@@ -269,7 +272,7 @@ function loadSongs()
 				if(split[i].length>1)
 				{
 					var lineSplit = split[i].split('\\')
-					songWrapper.append(songBox(lineSplit[0], al, ar, lineSplit[1], i))
+					songWrapper.append(songBox(lineSplit[0], al, ar, `http://${STATIC_HOST_URL}/${lineSplit[1]}`, i))
 					//wrapper.append(songBox(lineSplit[0], al, ar, lineSplit[1], i))
 				}
 			}
